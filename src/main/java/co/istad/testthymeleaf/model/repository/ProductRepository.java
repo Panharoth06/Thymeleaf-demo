@@ -16,9 +16,4 @@ public class ProductRepository {
         return productDatabase.getAllProducts();
     }
 
-    public Product getProductById(Integer productId) {
-        return productDatabase.getAllProducts()
-                .stream()
-                .filter(product -> product.getId().equals(productId)).findFirst().orElse(null);
-    }
 }

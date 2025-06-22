@@ -5,7 +5,6 @@ import lombok.Builder;
 @Builder
 public record ProductResponseDto
         (
-                Integer id,
                 String name,
                 String url,
                 String description,

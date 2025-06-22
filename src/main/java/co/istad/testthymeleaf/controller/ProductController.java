@@ -22,14 +22,4 @@ public class ProductController {
         return  "product";
     }
 
-    @GetMapping("/{productId}/detail")
-    public String productDetail(@PathVariable Integer productId, Model model) {
-        ProductResponseDto product = productService.getProductById(productId);
-        if (product == null) {
-            return "redirect:/product?error=notfound";
-        }
-        model.addAttribute("product", product);
-        return "product-detail";
-    }
-
 }

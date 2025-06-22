@@ -17,7 +17,6 @@ public class ProductServiceImpl implements ProductService {
         return new ArrayList<>(productRepository.getAllProducts().stream()
                 .map(p -> ProductResponseDto
                         .builder()
-                        .id(p.getId())
                         .name(p.getName())
                         .description(p.getDescription())
                         .price(p.getPrice())
@@ -26,18 +25,5 @@ public class ProductServiceImpl implements ProductService {
                         .build()
                 )
                 .toList());
-    }
-
-    @Override
-    public ProductResponseDto getProductById(Integer productId) {
-        return ProductResponseDto
-                .builder()
-                .id(productId)
-                .name(productRepository.getProductById(productId).getName())
-                .description(productRepository.getProductById(productId).getDescription())
-                .price(productRepository.getProductById(productId).getPrice())
-                .status(productRepository.getProductById(productId).getStatus())
-                .url(productRepository.getProductById(productId).getUrl())
-                .build();
     }
 }
